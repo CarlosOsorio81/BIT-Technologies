@@ -63,31 +63,6 @@ h1, h2, h3, h4, h5, h6 {
   height: 60px;
 }
 
-#header .logo h1 {
-  font-size: 36px;
-  margin: 0;
-  padding: 0;
-  font-weight: 400;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-}
-
-@media (max-width: 991px) {
-  #header .logo h1 {
-    font-size: 28px;
-  }
-}
-
-#header .logo h1 a, #header .logo h1 a:hover {
-  color: #00366f;
-  text-decoration: none;
-}
-
-#header .logo img {
-  padding: 0;
-  max-height: 85px;
-}
-
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/

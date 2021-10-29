@@ -1,5 +1,6 @@
 DROP DATABASE IF EXISTS  Tiendas_Comics;
 CREATE DATABASE Tiendas_Comics;
+USE DATABASE Tiendas_Comics;
 
 CREATE TABLE Sucursales(
     id_Sucursal bigint auto_increment,
