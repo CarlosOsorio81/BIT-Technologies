@@ -1,8 +1,27 @@
+<?php include "dbMigration.php" ?> 
+
+<?php
+
+$connection = mysqli_connect('localhost','root','','Tiendas_Comics');
+
+if(!$connection){
+    die("Database Connection Failed");
+}
+
+
+
+
+
+
+
+
+mysqli_close($connection);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
