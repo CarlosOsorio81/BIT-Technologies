@@ -45,5 +45,44 @@
         </div>
     </header>
 
+    <section id="hero" class="clearfix">
+        <div class="container" data-aos="fade-up">
+
+        <div class="hero-img" data-aos="zoom-out" data-aos-delay="200">
+            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                    <img src="https://www.xtrafondos.com/wallpapers/resized/spider-man-ps4-3452.jpg?s=large" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                    <img src="https://www.xtrafondos.com/wallpapers/resized/spider-man-ps4-3452.jpg?s=large" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                    <img src="https://www.xtrafondos.com/wallpapers/resized/spider-man-ps4-3452.jpg?s=large" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="hero-info" data-aos="zoom-in" data-aos-delay="100">
+            <h2>¡Creando<br><span>entrenenimiento</span><br>para todos!</h2>
+            <div>
+            <a href="#about" class="btn-get-started scrollto">Conocer mas</a>
+            </div>
+        </div>
+
+        </div>
+    </section>
+
+
+    
 </body>
 </html>
