@@ -21,7 +21,7 @@ CREATE TABLE Usuarios(
 );
 
 CREATE TABLE Inventario(
-    id_Comic BIGINT auto_increment,
+    id_Comic BIGINT,
     iCantidad INT,
     id_Sucursal BIGINT
 );
