@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS  Tiendas_Comics;
 CREATE DATABASE Tiendas_Comics;
 
 CREATE TABLE Sucursales(
@@ -9,6 +10,7 @@ CREATE TABLE Sucursales(
 
     PRIMARY KEY (id_Sucursal)
 );
+/*INSERT INTO Sucursales(sNombre, sDireccion, iTelefono, id_Usuario) VALUES ('Super Metepec', 'Por mi casa a la vuelta de la esquina', '7228568966', 8);*/
 
 CREATE TABLE Usuarios(
     id_Usuarios BIGINT auto_increment,
