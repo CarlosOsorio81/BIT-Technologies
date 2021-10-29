@@ -49,6 +49,39 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 996;
+  background: var(--color-primario);
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  transition: all 0.4s;
+}
+
+.back-to-top i {
+  font-size: 28px;
+  color: var(--color-white);
+  line-height: 0;
+}
+
+.back-to-top:hover {
+  background: #2990ff;
+  color: var(--color-white);
+}
+
+.back-to-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
 #header {
@@ -61,6 +94,31 @@ h1, h2, h3, h4, h5, h6 {
 
 #header.header-scrolled {
   height: 60px;
+}
+
+#header .logo h1 {
+  font-size: 36px;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 991px) {
+  #header .logo h1 {
+    font-size: 28px;
+  }
+}
+
+#header .logo h1 a, #header .logo h1 a:hover {
+  color: #00366f;
+  text-decoration: none;
+}
+
+#header .logo img {
+  padding: 0;
+  max-height: 85px;
 }
 
 /*--------------------------------------------------------------
