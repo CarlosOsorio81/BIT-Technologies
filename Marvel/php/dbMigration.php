@@ -60,7 +60,7 @@
         for($i = 0; $i < 5; $i++){
             $query = "INSERT INTO Empleado(id_Usuario, id_Sucursal) VALUE ('$empleadoUsuario[$i]','$empleadoSucursal[$i]')";
             $result = mysqli_query($connection, $query);
-            if(!$result){ die("Query Failed" . mysqli_error($connection)); } else{ echo "Record Created"; } echo "Record Created"; }
+            if(!$result){ die("Query Failed" . mysqli_error($connection)); } else{ echo "Record Created"; } echo "Record Created"; 
         };
 
         for($i = 0; $i < 5; $i++){
