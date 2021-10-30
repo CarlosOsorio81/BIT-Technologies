@@ -9,13 +9,14 @@ const marvel = {
         
         //const urlAPI = 'https://gateway.marvel.com:443/v1/public/comics?ts=1&apikey=e92d9a401a0300d4b9e80b0964d9ef16';
         const urlAPI = 'https://gateway.marvel.com:443/v1/public/comics?ts=9&apikey=e92d9a401a0300d4b9e80b0964d9ef16&hash=0e187be3348823a006ef2076ac1d7293';
-        const container = document.querySelector('#marvel-row');
+        const container = document.querySelector('#marvel-comics-row');
         let contentHTML = '';
 
         fetch(urlAPI)
             .then(res => res.json())
             .then((json) => {
                 console.log(json, 'RES.JSON')
+                var i = 0;
                 for(const comic of json.data.results){
                     let comicId = comic.id;
                     let comicName = comic.title;
@@ -24,13 +25,21 @@ const marvel = {
 
                     //console.log(comicName +" "+ comicId);
                     console.log(comicCover);
+                    
 
-                    contentHTML += "<div class='md-col-4'>";
-                    contentHTML += "<a href='"+comicUrl+"' target='_blank'>";
-                    contentHTML += "<img src='"+comicCover+"' alt='' class='img-thumbnail'>";
-                    contentHTML += "</a>";
-                    contentHTML += "<h3 class='title'>"+comicName+"</h3></div>";
-                    //contentHTML += '<h3 class="title">'+comicName+'</h3>';
+                    if(i % 4 == 0){ contentHTML += "<tr>"; }
+
+                    contentHTML += "<td>";
+                    contentHTML += "    <div class='md-col-4'>";
+                    contentHTML += "        <a href='"+comicUrl+"' target='_blank'>";
+                    contentHTML += "            <img src='"+comicCover+"' alt='' class='img-thumbnail'>";
+                    contentHTML += "        </a>";
+                    contentHTML += "        <h3 class='title'>"+comicName+"</h3>";
+                    contentHTML += "    </div>";
+                    contentHTML += "<td>";
+
+                    i++;
+                    if(i % 4 == 0){ contentHTML += "</tr>"; }
                 }
                 container.innerHTML = contentHTML;
             })
