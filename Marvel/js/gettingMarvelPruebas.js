@@ -1,11 +1,80 @@
-const singleComic = {
+// var public = "e92d9a401a0300d4b9e80b0964d9ef16";
+// var private = "7a3943ee32063dc5199bfab482e4bf083acf1114";
+// var ts = "9"
+// var hash = "97a3943ee32063dc5199bfab482e4bf083acf1114e92d9a401a0300d4b9e80b0964d9ef16"; //ts+private+public
+// var hash = "0e187be3348823a006ef2076ac1d7293";
+
+let comicId = '';
+const marvel = {
+    render: () => {
+
+        
+        //const urlAPI = 'https://gateway.marvel.com:443/v1/public/comics?ts=1&apikey=e92d9a401a0300d4b9e80b0964d9ef16';
+        const urlAPI = 'https://gateway.marvel.com:443/v1/public/comics?ts=9&apikey=e92d9a401a0300d4b9e80b0964d9ef16&hash=0e187be3348823a006ef2076ac1d7293';
+        const container = document.querySelector('#marvel-comics-row');
+        let contentHTMLM = '';
+
+        fetch(urlAPI)
+            .then(res => res.json())
+            .then((json) => {
+                console.log(json, 'RES.JSON')
+                var i = 0;
+                for(const comic of json.data.results){
+                    comicId = comic.id;
+                    let comicName = comic.title;
+                    let comicCover = comic.thumbnail.path +"."+ comic.thumbnail.extension;
+                    let comicUrl = comic.urls[0].url;
+
+                    //console.log(comicName +" "+ comicId);
+                    console.log(comicCover);
+                    
+
+                    if(i % 4 == 0){ contentHTMLM += "<tr>"; }
+
+                    contentHTMLM += "<td>";
+                    contentHTMLM += "    <div class='md-col-4'>";
+                    // contentHTMLM += "        <a href='"+comicUrl+"' target='_blank'>";
+                    // contentHTMLM += "        <a href='singleComic.php?id="+comicId+"' target='_blank'>";
+                    contentHTMLM += "            <img src='"+comicCover+"' alt='' class='img-thumbnail'  data-bs-toggle='modal' data-bs-target='#exampleModal_"+comicId+"'>";
+                    // contentHTMLM += "        </a>";
+                    contentHTMLM += "        <h3 class='title'>"+comicName+"</h3>";
+                    contentHTMLM += "    </div>";
+                    contentHTMLM += "<td>";
+
+
+                    contentHTMLM += '<div class="modal fade" id="exampleModal_'+comicId+'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">'
+                    contentHTMLM += '    <div class="modal-dialog modal-dialog-centered">'
+                    contentHTMLM += '        <div class="modal-content" id="single-comic-row'+comicId+'">'
+                    contentHTMLM += '            ID: '+comicId;
+                    contentHTMLM += '        </div>'
+                    contentHTMLM += '    </div>'
+                    contentHTMLM += '</div>'
+                    
+
+                    i++;
+                    if(i % 4 == 0){ contentHTMLM += "</tr>"; }
+                }
+                container.innerHTML = contentHTMLM;
+
+                for(const comic of json.data.results){
+                    comicId = comic.id;                    
+                    singleComicP.render();
+                }
+
+            })
+
+    }
+};
+
+
+const singleComicP = {
     render: () => {
         
-        let idParameter = new URLSearchParams(window.location.search);
-        //console.log("id es: "+idParameter.get('id'));
+        // let idParameter = new URLSearchParams(window.location.search);
+        // console.log("id es: "+idParameter.get('id'));
 
-        const urlAPI = 'https://gateway.marvel.com:443/v1/public/comics/'+idParameter.get('id')+'?ts=9&apikey=e92d9a401a0300d4b9e80b0964d9ef16&hash=0e187be3348823a006ef2076ac1d7293';
-        const container = document.querySelector('#single-comic-row');
+        const urlAPI = 'https://gateway.marvel.com:443/v1/public/comics/'+comicId+'?ts=9&apikey=e92d9a401a0300d4b9e80b0964d9ef16&hash=0e187be3348823a006ef2076ac1d7293';
+        const containerC = document.querySelector('#single-comic-row-'+comicId);
         const available = document.querySelector('#tiendas-disponibles');
         let contentHTML = '';
 
@@ -31,27 +100,13 @@ const singleComic = {
 
                     date = new Date(comicDateISO);
                     year = date.getFullYear();
-                    month = date.getMonth();
+                    month = date.getMonth()+1;
                     dt = date.getDate();
 
                     if (dt < 10) { dt = '0' + dt; }
-                    // if (month < 10) { month = '0' + month; }
-                    switch(month){
-                        case 1: nmonth = "January"; break;
-                        case 2: nmonth = "February"; break;
-                        case 3: nmonth = "March"; break;
-                        case 4: nmonth = "April"; break;
-                        case 5: nmonth = "May"; break;
-                        case 6: nmonth = "June"; break;
-                        case 7: nmonth = "July"; break;
-                        case 8: nmonth = "August"; break;
-                        case 9: nmonth = "September"; break;
-                        case 10: nmonth = "October"; break;
-                        case 11: nmonth = "November"; break;
-                        case 12: nmonth = "December"; break;
-                    }
+                    if (month < 10) { month = '0' + month; }
 
-                    let comicDate = dt+'-'+nmonth+'-'+year;
+                    let comicDate = dt+'-'+month+'-'+year;
                     
                     contentHTML += '<div class="col-md-5">'
                     contentHTML += '    <img src="'+comicCover+'" class="img-fluid rounded-start" alt="...">'
@@ -93,7 +148,7 @@ const singleComic = {
                     
 
                 }
-                container.innerHTML = contentHTML;
+                containerC.innerHTML = contentHTML;
                 
                 document.getElementById('available-stores-row').insertAdjacentElement('afterend', available);
                 singleComicCharacters.render();
@@ -108,7 +163,7 @@ const singleComicCharacters = {
         
         let idParameter = new URLSearchParams(window.location.search);
 
-        const urlAPI = 'https://gateway.marvel.com:443/v1/public/comics/'+idParameter.get('id')+'/characters?ts=9&apikey=e92d9a401a0300d4b9e80b0964d9ef16&hash=0e187be3348823a006ef2076ac1d7293';
+        const urlAPI = 'https://gateway.marvel.com:443/v1/public/comics/'+comicId+'/characters?ts=9&apikey=e92d9a401a0300d4b9e80b0964d9ef16&hash=0e187be3348823a006ef2076ac1d7293';
         const containerC = document.querySelector('#single-comic-characters-row');
         let contentHTMLC = '';
 
@@ -138,4 +193,5 @@ const singleComicCharacters = {
     }
 };
 
-singleComic.render();
+
+marvel.render();

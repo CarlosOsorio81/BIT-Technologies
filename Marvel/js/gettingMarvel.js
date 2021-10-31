@@ -23,7 +23,6 @@ const marvel = {
                     let comicCover = comic.thumbnail.path +"."+ comic.thumbnail.extension;
                     let comicUrl = comic.urls[0].url;
 
-                    //console.log(comicName +" "+ comicId);
                     console.log(comicCover);
                     
 
@@ -31,8 +30,7 @@ const marvel = {
 
                     contentHTML += "<td>";
                     contentHTML += "    <div class='md-col-4'>";
-                    // contentHTML += "        <a href='"+comicUrl+"' target='_blank'>";
-                    contentHTML += "        <a href='singleComic.php?id="+comicId+"' target='_blank'>";
+                    contentHTML += "        <a href='singleComic.php?id="+comicId+"'>";
                     contentHTML += "            <img src='"+comicCover+"' alt='' class='img-thumbnail'>";
                     contentHTML += "        </a>";
                     contentHTML += "        <h3 class='title'>"+comicName+"</h3>";
