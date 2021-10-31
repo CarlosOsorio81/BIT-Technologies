@@ -4,12 +4,12 @@
 
     $sucursalesNombre = ['Toluca','Metepec','Zinacantepec','Lerma','San Mateo Atenco'];
     $sucursalesDireccion = ['Independencia 200','Leona Vicario 100','San Luis 200','Av. Industria 300','Albert Einstein 100'];
-    $sucursalesTelefono = ['722 2345678','721 9078654','722 6543214','721 6432178','726 0459812'];
+    $sucursalesTelefono = ['7222345678','7219078654','7226543214','7216432178','7260459812'];
     $sucursalesid_Usuario = ['1','2','3','4','5'];
 
-    $inventarioid_Comic = ['1','1','2','2','3'];
-    $inventarioCantidad = ['5','10','2','1','30'];
-    $inventarioSucursal = ['1','2','3','4','5'];
+    $inventarioid_Comic = ['1','1','2','2','3','1886','1886','1886','1332','1332','1332','1332'];
+    $inventarioCantidad = ['5','10','2','1','30','16','20','5','4','8','2','11'];
+    $inventarioSucursal = ['1','2','3','4','5','1','4','5','1','3','2','4'];
 
     $empleadoUsuario = ['1','2','3','4','5'];
     $empleadoSucursal = ['1','2','3','4','5'];
@@ -50,7 +50,7 @@
 
         $query = "CREATE TABLE Inventario (id_Comic BIGINT ,iCantidad INT, id_Sucursal BIGINT);";
         if ($connection->query($query)) { echo "Table created successfully"; 
-            for($i = 0; $i < 5; $i++){
+            for($i = 0; $i < 12; $i++){
                 $query = "INSERT INTO Inventario(id_Comic, iCantidad, id_Sucursal) VALUE ('$inventarioid_Comic[$i]','$inventarioCantidad[$i]','$inventarioSucursal[$i]')";
                 $result = mysqli_query($connection, $query);
                 if(!$result){ die("Query Failed" . mysqli_error($connection)); } else{ echo "Record Created"; }

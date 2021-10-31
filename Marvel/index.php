@@ -21,7 +21,7 @@
 <body>
 
         
-    <header id="header" class="fixed-top d-flex align-items-center">
+    <!-- <header id="header" class="fixed-top d-flex align-items-center">
         <div class="container d-flex justify-content-between">
             <nav id="navbar" class="navbar">
 
@@ -49,7 +49,14 @@
         </div>
     </header>
 
-<br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br> -->
+
+
+    <nav class="navbar navbar-dark bg-dark">
+        <a href="#" class="navbar-brand">Tienda de comics</a>
+    </nav>
+
+
     <!-- <section id="headerImage">
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
