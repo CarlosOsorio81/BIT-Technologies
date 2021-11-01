@@ -1,5 +1,3 @@
-<?php include "CRUD_Sucursales.php" ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
