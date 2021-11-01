@@ -23,7 +23,7 @@ const marvel = {
                     let comicCover = comic.thumbnail.path +"."+ comic.thumbnail.extension;
                     let comicUrl = comic.urls[0].url;
 
-                    // console.log(comicCover);
+                    console.log(comicId);
                     
 
                     if(i % 4 == 0){ contentHTML += "<tr>"; }
