@@ -16,7 +16,7 @@
     
     <link href="css/Bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="css/SingleComic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <!-- <link href="css/style.css" rel="stylesheet"> -->
 </head>
 <body>
     <nav class="navbar navbar-dark bg-dark">
