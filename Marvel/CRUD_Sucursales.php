@@ -193,18 +193,21 @@
                   <div class="sent-message">Tu mensaje ah sido enviado. Gracias!</div>
                 </div>                
                 <div class="row">
-                  <div class="text-center col-lg-4 col-md-4 col-sm-4 mt-2"><button type="submit" name="actualizarSucursal">Upload</button></div>
-                  <div class="text-center col-lg-4 col-md-4 col-sm-4 mt-2"><button type="submit" name="borrarSucursal">Delete</button></div>
-                  <div class="text-center col-lg-4 col-md-4 col-sm-4 mt-2"><button type="submit" name="cargarSucursal">Mostrar Todo</button></div>
-                </div>                
-
+                  <div class="text-center col-lg-6 col-md-6 col-sm-6 mt-2"><button type="submit" name="actualizarSucursal">Upload</button></div>
+                  <div class="text-center col-lg-6 col-md-6 col-sm-6 mt-2"><button type="submit" name="borrarSucursal">Delete</button></div>
+                </div>
                 <br>
-                <?php
-                  if(isset($_POST['cargarSucursal'])){ echo "<script> window.location.replace('php/Sucursal_Read.php'); </script>"; }
-                  if(isset($_POST['actualizarSucursal'])){ updateTable(); }
-                  if(isset($_POST['borrarSucursal'])){ deleteRow(); }
-                ?>
-              </form>
+              </form> 
+
+
+              <form method="POST" role="form" enctype="multipart/form-data">
+                <div class="text-center col-lg-12 col-md-12 col-sm-12 mt-2"><button type="submit" name="cargarSucursal">Mostrar Todo</button></div>
+              </form>         
+              <?php
+                if(isset($_POST['cargarSucursal'])){ echo "<script> window.location.replace('php/Sucursal_Read.php'); </script>"; }
+                if(isset($_POST['actualizarSucursal'])){ updateTable(); }
+                if(isset($_POST['borrarSucursal'])){ deleteRow(); }
+              ?>
             </div>
           </div>
 
