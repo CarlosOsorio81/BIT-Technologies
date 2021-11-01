@@ -50,7 +50,7 @@
 
         $query = "CREATE TABLE Inventario (id_Comic BIGINT ,iCantidad INT, id_Sucursal BIGINT);";
         if ($connection->query($query)) {/* echo "Table created successfully";*/ 
-            for($i = 0; $i < 12; $i++){
+            for($i = 0; $i < 27; $i++){
                 $query = "INSERT INTO Inventario(id_Comic, iCantidad, id_Sucursal) VALUE ('$inventarioid_Comic[$i]','$inventarioCantidad[$i]','$inventarioSucursal[$i]')";
                 $result = mysqli_query($connection, $query);
             if(!$result){ die("Query Failed" . mysqli_error($connection)); } else{/* echo "Record Created"; */}
