@@ -34,7 +34,6 @@ const singleComic = {
                     month = date.getMonth();
                     dt = date.getDate();
 
-                   console.log(comicDate = dt+'-'+nmonth+'-'+year);
 
                     if (dt < 10) { dt = '0' + dt; }
                     // if (month < 10) { month = '0' + month; }
@@ -53,9 +52,10 @@ const singleComic = {
                         case 12: nmonth = "December"; break;
                         default: nmonth = ""; break;
                     }
-
-                    if(nmonth != ""){ let comicDate = dt+'-'+nmonth+'-'+year; }
-                    else { let comicDate = new Date(comicDateISO); }
+                    
+                    let comicDate;
+                    if(nmonth != ""){ comicDate = dt+'-'+nmonth+'-'+year; }
+                    else { comicDate = new Date(comicDateISO); }
                     
                     contentHTML += '<div class="col-md-5">'
                     contentHTML += '    <img src="'+comicCover+'" class="img-fluid rounded-start" alt="...">'
