@@ -22,47 +22,47 @@
     // Database creation
     $query = "CREATE DATABASE Tiendas_Comics";    
     if ($connection->query($query)) {
-        echo "Database created successfully " . "<br>";
+        //echo "Database created successfully " . "<br>";
 
         
         // Use Database
         $query = "USE Tiendas_Comics";
-        if ($connection->query($query)) { echo "Using Database "; } else { echo "Error, not using database " . $connection->error; }
+    if ($connection->query($query)) {/* echo "Using Database "; */} else { echo "Error, not using database " . $connection->error; }
 
         //Tables creation
         $query = "CREATE TABLE Sucursales (id_Sucursal BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY, sNombre VARCHAR(40), sDireccion VARCHAR(100), iTelefono BIGINT, id_Usuario BIGINT);";
-        if ($connection->query($query)) { echo "Table created successfully"; 
+        if ($connection->query($query)) {/* echo "Table created successfully";*/ 
             for($i = 0; $i < 5; $i++){
                 $query = "INSERT INTO Sucursales(sNombre, sDireccion, iTelefono, id_Usuario) VALUE ('$sucursalesNombre[$i]','$sucursalesDireccion[$i]','$sucursalesTelefono[$i]','$sucursalesid_Usuario[$i]')";
                 $result = mysqli_query($connection, $query);
-                if(!$result){ die("Query Failed" . mysqli_error($connection)); } else{ echo "Record Created"; }
+            if(!$result){ die("Query Failed" . mysqli_error($connection)); } else{/* echo "Record Created"; */}
             };
         } else { echo "Error creating table: " . $connection->error; }
 
         $query = "CREATE TABLE Usuarios (id_Usuarios BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY, sNombre VARCHAR(40), sEmail VARCHAR(25), sPassword VARCHAR(16), iTipo INT);";
-        if ($connection->query($query)) { echo "Table created successfully"; 
+        if ($connection->query($query)) {/* echo "Table created successfully";*/ 
             for($i = 0; $i < 5; $i++){
                 $query = "INSERT INTO Usuarios(sNombre, sEmail, sPassword, iTipo) VALUE ('$usuariosNombre[$i]','$usuariosEmail[$i]','$usuariosPassword[$i]','$usuariosTipo[$i]')";
                 $result = mysqli_query($connection, $query);
-                if(!$result){ die("Query Failed" . mysqli_error($connection)); } else{ echo "Record Created"; }
+            if(!$result){ die("Query Failed" . mysqli_error($connection)); } else{/* echo "Record Created"; */}
             };
         } else { echo "Error creating table: " . $connection->error; }
 
         $query = "CREATE TABLE Inventario (id_Comic BIGINT ,iCantidad INT, id_Sucursal BIGINT);";
-        if ($connection->query($query)) { echo "Table created successfully"; 
+        if ($connection->query($query)) {/* echo "Table created successfully";*/ 
             for($i = 0; $i < 12; $i++){
                 $query = "INSERT INTO Inventario(id_Comic, iCantidad, id_Sucursal) VALUE ('$inventarioid_Comic[$i]','$inventarioCantidad[$i]','$inventarioSucursal[$i]')";
                 $result = mysqli_query($connection, $query);
-                if(!$result){ die("Query Failed" . mysqli_error($connection)); } else{ echo "Record Created"; }
+            if(!$result){ die("Query Failed" . mysqli_error($connection)); } else{/* echo "Record Created"; */}
             };
         } else { echo "Error creating table: " . $connection->error; }
 
         $query = "CREATE TABLE Empleado (id_Usuario BIGINT ,id_Sucursal BIGINT);";
-        if ($connection->query($query)) { echo "Table created successfully"; 
+        if ($connection->query($query)) {/* echo "Table created successfully";*/ 
             for($i = 0; $i < 5; $i++){
                 $query = "INSERT INTO Empleado(id_Usuario, id_Sucursal) VALUE ('$empleadoUsuario[$i]','$empleadoSucursal[$i]')";
                 $result = mysqli_query($connection, $query);
-                if(!$result){ die("Query Failed" . mysqli_error($connection)); } else{ echo "Record Created"; }
+            if(!$result){ die("Query Failed" . mysqli_error($connection)); } else{/* echo "Record Created"; */}
             };
         } else { echo "Error creating table: " . $connection->error; }
 
