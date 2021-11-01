@@ -7,9 +7,9 @@
     $sucursalesTelefono = ['7222345678','7219078654','7226543214','7216432178','7260459812'];
     $sucursalesid_Usuario = ['1','2','3','4','5'];
 
-    $inventarioid_Comic = ['1','1','2','2','3','1886','1886','1886','1332','1332','1332','1332'];
-    $inventarioCantidad = ['5','10','2','1','30','16','20','5','4','8','2','11'];
-    $inventarioSucursal = ['1','2','3','4','5','1','4','5','1','3','2','4'];
+    $inventarioid_Comic = ['82967','82967','82965','82970','82970','1308','1308','1689','331','331','428','428','3627','291','376','1994','1158','1220','1003','1003','384','1886','183','1332','1749','323','323'];
+    $inventarioCantidad = ['5','10','2','1','30','16','20','5','4','8','2','11','1','15','2','21','3','6','9','1','3','2','6','30','1','4','8'];
+    $inventarioSucursal = ['1','2','3','4','5','1','4','5','1','3','2','4','2','3','3','4','5','5','5','1','1','1','2','2','4','4','5'];
 
     $empleadoUsuario = ['1','2','3','4','5'];
     $empleadoSucursal = ['1','2','3','4','5'];
@@ -30,7 +30,7 @@
     if ($connection->query($query)) {/* echo "Using Database "; */} else { echo "Error, not using database " . $connection->error; }
 
         //Tables creation
-        $query = "CREATE TABLE Sucursales (id_Sucursal BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY, sNombre VARCHAR(40), sDireccion VARCHAR(100), iTelefono BIGINT, id_Usuario BIGINT);";
+        $query = "CREATE TABLE Sucursales (id_Sucursal BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY, sNombre VARCHAR(40), sDireccion VARCHAR(250), iTelefono BIGINT, id_Usuario BIGINT);";
         if ($connection->query($query)) {/* echo "Table created successfully";*/ 
             for($i = 0; $i < 5; $i++){
                 $query = "INSERT INTO Sucursales(sNombre, sDireccion, iTelefono, id_Usuario) VALUE ('$sucursalesNombre[$i]','$sucursalesDireccion[$i]','$sucursalesTelefono[$i]','$sucursalesid_Usuario[$i]')";
@@ -50,7 +50,7 @@
 
         $query = "CREATE TABLE Inventario (id_Comic BIGINT ,iCantidad INT, id_Sucursal BIGINT);";
         if ($connection->query($query)) {/* echo "Table created successfully";*/ 
-            for($i = 0; $i < 12; $i++){
+            for($i = 0; $i < 27; $i++){
                 $query = "INSERT INTO Inventario(id_Comic, iCantidad, id_Sucursal) VALUE ('$inventarioid_Comic[$i]','$inventarioCantidad[$i]','$inventarioSucursal[$i]')";
                 $result = mysqli_query($connection, $query);
             if(!$result){ die("Query Failed" . mysqli_error($connection)); } else{/* echo "Record Created"; */}
