@@ -1,12 +1,7 @@
-<?php include "php/dbMigration.php";
-    $connection = mysqli_connect('localhost','root','','Tiendas_Comics');
-    if(!$connection){ die("Database Connection Failed"); }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+    <?php include "php/dbMigration.php"; ?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,17 +9,16 @@
 
 
     <link href="css/Bootstrap/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <!-- <link href="css/style.css" rel="stylesheet"> -->
+    <link href="css/SingleComic.css" rel="stylesheet">
 
 
 </head>
 <body>
 
     <nav class="navbar navbar-dark bg-dark">
-        <a href="#" class="navbar-brand">Tienda de comics</a>
+        <a href="index.php" class="navbar-brand">Tienda de comics</a>
     </nav>
-
-
 
     <div class="container">
         <div class="row">

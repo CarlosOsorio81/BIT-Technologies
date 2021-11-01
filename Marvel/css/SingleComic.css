@@ -1,3 +1,61 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+h5{
+  font-family: "Montserrat", sans-serif;
+  
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+} 
+
+
+
+img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: auto;
+
+  max-width:  15rem;
+  max-height: 15rem;
+  object-fit: cover;
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+.navbar {
+  padding: 0;
+}
+
+.navbar a, .navbar a:focus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0 10px 30px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  color: var(--color-secundario);
+  font-weight: 500;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------------
+# Single Comic Page
+--------------------------------------------------------------*/
 .title {
     margin-bottom: 2rem;
     font-size: 2rem;
