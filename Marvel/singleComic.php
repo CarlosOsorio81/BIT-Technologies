@@ -16,7 +16,6 @@
     
     <link href="css/Bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="css/SingleComic.css" rel="stylesheet">
-    <!-- <link href="css/style.css" rel="stylesheet"> -->
 </head>
 <body>
     <nav class="navbar navbar-dark bg-dark">
@@ -29,12 +28,8 @@
         <div class="row">
 
 
-            <!-- <div class="card mb-3" style="max-width: 540px;"> -->
             <div class="card md-8">
                 <div class="row g-0" id="single-comic-row">
-                    <!-- <div class="col-md-5">
-                        <img src="..." class="img-fluid rounded-start" alt="...">
-                    </div> -->
                     <div class="col-md-7">
                         <div class="card-body">
                             <h5 class="card-title">Titulo</h5>
@@ -73,37 +68,10 @@
                                                 <?php
                                             } }
                                         ?>
-
-                                        <!-- <li class="list-group-item d-flex justify-content-between align-items-start">
-                                            <div class="ms-2 me-auto">
-                                                <div class="fw-bold">Subheading</div>
-                                                Content for list item
-                                            </div>
-                                            <span class="badge bg-primary rounded-pill">14</span>
-                                        </li>
-                                        <li class="list-group-item d-flex justify-content-between align-items-start">
-                                            <div class="ms-2 me-auto">
-                                                <div class="fw-bold">Subheading</div>
-                                                Content for list item
-                                            </div>
-                                            <span class="badge bg-primary rounded-pill">14</span>
-                                        </li> -->
                                     </ol>
                                 
                                 </div>
                             </details>
-
-
-                            <!-- <br>
-                            <p class="card-text">Personajes: </p>
-                            <div class="container">
-                                    <img src="..." class="img-thumbnail" alt="...">
-                                    <img src="..." class="img-thumbnail" alt="...">
-                                    <img src="..." class="img-thumbnail" alt="...">
-                                    <img src="..." class="img-thumbnail" alt="...">
-                                    <img src="..." class="img-thumbnail" alt="...">
-                            </div> -->
-
 
 
                             <p class="card-text float-end"><small class="text-muted"><a href="#">Pagina Oficial</a></small></p>
@@ -112,15 +80,8 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
-    </div>
-
-
-    <br><br>
-
-                
+    </div>               
 
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

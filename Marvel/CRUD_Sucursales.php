@@ -1,29 +1,15 @@
-<?php include "php/db.php"; ?>
-
 <!DOCTYPE html>
 <html lang="es-MX">
 
 <head>
+  <?php include "php/db.php"; ?>
+
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-
   <title>Registrar</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
 
-
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="css/vendor/aos/aos.css" rel="stylesheet">
   <link href="css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="css/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="css/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
   <link href="css/crudStyle.css" rel="stylesheet">
 </head>
 
@@ -38,32 +24,19 @@
         this.s_iTelefono = s_iTelefono;
       }
     }
-
     var s_structSucursales = [];
-
   </script>
 
+  <nav class="navbar navbar-dark bg-dark">
+      <a href="index.php" class="navbar-brand">Tienda de comics</a>
+  </nav>
+
   <main id="main">
-
-    <!-- ======= Breadcrumbs Section ======= -->
-    <!-- <section class="breadcrumbs">
-      <div class="container">
-
-        <div class="d-flex justify-content-between align-items-center">
-          <h2>Registrar</h2>
-        </div>
-
-      </div>
-    </section> -->
-    <!-- End Breadcrumbs Section -->
-
-    
-    
     <section id="Nuevo_Registro">
       <div class="container-fluid">
 
         <div class="row">
-          <div class="col-lg-1"></div> <!--Para centrar-->
+          <div class="col-lg-1"></div>
           
           <div class="col-lg-5">
             <div class="form">
@@ -110,15 +83,10 @@
                 </div>
                 <div class="text-center"><button type="submit" name="nuevaSucursal">Guardar</button></div>
                 <br>
-                <?php
-                  if(isset($_POST['nuevaSucursal'])){ createRow(); }
-                ?>
+                <?php if(isset($_POST['nuevaSucursal'])){ createRow(); } ?>
               </form>
             </div>
           </div>
-
-
-
 
           
           <div class="col-lg-5">
@@ -210,35 +178,18 @@
               ?>
             </div>
           </div>
-
-          <div class="col-lg-1"></div> <!--Para centrar-->
+          <div class="col-lg-1"></div>
         </div>
 
       </div>
-    </section><!-- End Contact Section -->
-    
-  </main><!-- End #main -->
-
- 
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="css/vendor/aos/aos.js"></script>
-  <script src="css/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="css/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="css/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="css/vendor/php-email-form/validate.js"></script>
-  <script src="css/vendor/purecounter/purecounter.js"></script>
-  <script src="css/vendor/swiper/swiper-bundle.min.js"></script>
-
+    </section>    
+  </main>
 </body>
-
 </html>
 
 <?php
 
-  function createRow(){
+function createRow(){
     global $connection;
     $sNombre = $_POST['nombreSucursal'];
     $sDireccion = $_POST['direccionSucursal'];
@@ -255,9 +206,9 @@
       echo "<script> alert('Creado exitosamente'); </script>";
     }
     echo "<script> window.location.replace('CRUD_Sucursales.php'); </script>";
-  }
+}
 
-  function updateTable(){
+function updateTable(){
     global $connection;
     $id_Sucursal = $_POST['sucursalId'];
     $sNombre = $_POST['sNombre'];
@@ -276,14 +227,12 @@
 }
 
 function deleteRow(){
-    global $connection;
-       
+    global $connection;       
     $id_Sucursal = $_POST['sucursalId'];
 
     $query = "DELETE FROM Sucursales WHERE id_Sucursal = '$id_Sucursal'";
     
-    $result = mysqli_query($connection, $query);
-    
+    $result = mysqli_query($connection, $query);    
     if(!$result){
       echo "<script> alert('Query Failed: ". mysqli_error($connection)."'); </script>"; die("Query Failed" . mysqli_error($connection));
     } else{
